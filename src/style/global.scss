@@ -1,0 +1,31 @@
+
+$backgoundColorBody: #b2e6d0;
+$backgoundColorButton: #808080;
+$borderColorButton: #5d5b5b;
+$borderColorShadow: #adacac;
+$hoverColorButton: #494949;
+
+$lightColor: #ffffff;
+$darkColor: #000000;
+
+$wrapper-width: 98%;
+$tablet-width: 767px;
+
+@mixin flex ($justify: center, $align: flex-start) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+%button {
+  border: none;
+  padding: 4px 10px;
+  cursor: pointer;
+  background: $backgoundColorButton;
+  color: $lightColor;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: $hoverColorButton;
+  }
+}
