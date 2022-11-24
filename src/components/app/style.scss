@@ -90,12 +90,40 @@
 
       #main-wrapper__iframe {
         position: absolute;
-        bottom: 1%;
-        left: 1%;
-        width: 98%;
-        height: 86%;
+        top: 14vh;
+        left: 2%;
+        width: 96%;
+        height: 86vh;
         border: solid 2px $borderColorButton;
         box-shadow: 0 0 10px 5px $borderColorShadow;
+      }
+    }
+  }
+  
+  .footer {
+    .footer-wrapper {
+      padding: 0 2%;
+      margin-top: 700px;
+      margin-bottom: 50px;
+      @include flex;
+
+      .main-wrapper__photo {
+        width: 400px;
+        overflow: hidden;
+        border: 2px $borderColorButton solid;
+        border-radius: 10px;
+
+        .animation-photo {
+          width: 400px;
+          height: auto;
+          cursor: pointer;
+          transition-duration: 0.5s;
+          display: block;
+
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
       }
     }
   }
