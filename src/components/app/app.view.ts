@@ -1,6 +1,7 @@
 import { IAppView, SearchHandler } from './types';
 import Selector from '../../constants/constants';
 import validateByClickButton from './validation';
+import showToastMessage from '../UI/toast-message/toast-message';
 
 export default class AppView implements IAppView {
   listnerSearchButton(handler: SearchHandler): void {
@@ -12,7 +13,7 @@ export default class AppView implements IAppView {
       if (result) {
         handler(result);
       } else {
-        console.log('message');
+        showToastMessage('Неверно введён домен', 'orange');
       }
     });
   }

@@ -3,6 +3,7 @@ enum Selector {
   searchInput = '.search-wrapper__input',
   mainWrapper = '.main-wrapper',
   iFrame = '#main-wrapper__iframe',
+  toast = '.toast',
 }
 
 export default Selector;

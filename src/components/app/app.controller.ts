@@ -1,6 +1,8 @@
 import AppView from './app.view';
 import AppModel from './app.model';
 import { IAppController } from './types';
+import showToastMessage from '../UI/toast-message/toast-message';
+import { addLoader, removeLoader } from '../UI/toast-message/loder';
 
 export default class AppController implements IAppController {
   private view;
@@ -13,20 +15,21 @@ export default class AppController implements IAppController {
     this.baseUrl = 'autoparus.com';
     this.view = new AppView();
     this.model = new AppModel();
-    this.view.listnerSearchButton(this.getSearchValue);
   }
 
   initApp(): void {
-    this.checkApi();
+    this.view.listnerSearchButton(this.getSearchValue);
   }
 
   async checkApi(url = this.baseUrl) {
+    addLoader();
     const result = await this.model.checkApi(url);
     if (result) {
       this.view.updateFrame(url);
     } else {
-      console.log('message');
+      showToastMessage('Такого домена не существует', 'red');
     }
+    removeLoader();
   }
 
   getSearchValue = (query?: string): void => {
