@@ -15,6 +15,7 @@ export default class AppController implements IAppController {
     this.baseUrl = 'autoparus.com';
     this.view = new AppView();
     this.model = new AppModel();
+    this.view.listnerBackHomeButton(this.backToHomePage);
   }
 
   initApp(): void {
@@ -34,5 +35,9 @@ export default class AppController implements IAppController {
 
   getSearchValue = (query?: string): void => {
     this.checkApi(query);
+  };
+
+  backToHomePage = () => {
+    this.view.updateFrame(this.baseUrl);
   };
 }

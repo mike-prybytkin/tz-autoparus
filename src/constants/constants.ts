@@ -4,6 +4,7 @@ enum Selector {
   mainWrapper = '.main-wrapper',
   iFrame = '#main-wrapper__iframe',
   toast = '.toast',
+  backHomeButton = '.back-home-button',
 }
 
 export default Selector;

@@ -7,6 +7,7 @@ interface IAppController {
 interface IAppView {
   listnerSearchButton(handler: SearchHandler): void;
   updateFrame(url: string): void;
+  listnerBackHomeButton(handler: BackHomeHandler): void;
 }
 
 interface IAppModel {
@@ -14,5 +15,6 @@ interface IAppModel {
 }
 
 type SearchHandler = (query: string) => void;
+type BackHomeHandler = () => void;
 
-export { IAppController, IAppView, IAppModel, SearchHandler };
+export { IAppController, IAppView, IAppModel, SearchHandler, BackHomeHandler };
